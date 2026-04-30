@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -505,8 +506,11 @@
   }
 
   // ====== 起動判定 ======
+  // GASのURLを直接埋め込み（設定画面スキップ）
+  const EMBEDDED_URL = 'https://script.google.com/macros/s/AKfycbzpMn8dQ_U8y0HrfJqc5N04057bgjrj0nYK_wGyLvDMwNJgvpAKZ65WBYOSxlvsj7-ktg/exec';
   const saved = localStorage.getItem(CONFIG_KEY);
-  if (saved) { GAS_URL = saved; startApp(); }
+  GAS_URL = EMBEDDED_URL; // 常に埋め込みURLを使う
+  startApp();
 </script>
 </body>
 </html>
